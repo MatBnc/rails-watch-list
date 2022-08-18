@@ -1,0 +1,12 @@
+<h1>Your list: <%= @list.name %></h1>
+
+<ul><% @bookmarks.each do |bookmark| %>
+  <li><%= "#{bookmark.movie.title} - #{bookmark.comment}" %>
+  <%= link_to del_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+  <i class="fa fa-trash" aria-hidden="true"></i>
+  <% end %></li>
+<% end %></ul>
+
+
+<p><%= link_to "New bookmark", new_list_bookmarks_path(@list) %></p>
+<p><%= link_to "Back to index", lists_path %></p>
