@@ -1,11 +1,11 @@
-<div class="banner p-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2079&q=80);">
+<div class="banner p-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 400, crop: :fill %>');">
   <h1><%= @list.name %></h1>
 </div>
 
 <div class="container">
   <div class="row">
     <% @bookmarks.each do |bookmark| %>
-      <div class="col-6">
+      <div class="col-4">
         <div class="card-product" style="position: relative">
           <img src= <%= bookmark.movie.poster_url %> />
           <div class="card-product-infos">

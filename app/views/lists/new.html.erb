@@ -4,7 +4,7 @@
 
   <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
-    <%= f.association :movies %>
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit %>
   <% end %>
 
