@@ -1,12 +1,21 @@
-<h1>Your list: <%= @list.name %></h1>
+<div style="text-align: center;" class="my-5">
+  <h1>Your list: <%= @list.name %></h1>
+</div>
 
-<ul><% @bookmarks.each do |bookmark| %>
-  <li><%= "#{bookmark.movie.title} - #{bookmark.comment}" %>
-  <%= link_to del_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-  <i class="fa fa-trash" aria-hidden="true"></i>
-  <% end %></li>
-<% end %></ul>
+<% @bookmarks.each do |bookmark| %>
+  <div class="card-product" style="position: relative">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= bookmark.movie.title %></h2>
+      <p><%= bookmark.comment %></p>
+      <%= link_to del_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa fa-trash" aria-hidden="true" style='position: absolute; bottom: 5px; right: 5px; color:black;'></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 
-
-<p><%= link_to "New bookmark", new_list_bookmarks_path(@list) %></p>
-<p><%= link_to "Back to index", lists_path %></p>
+<div class="link">
+  <h3><%= link_to "New bookmark", new_list_bookmarks_path(@list) %></h3>
+  <h3><%= link_to "Back to index", lists_path %></h3>
+</div>
