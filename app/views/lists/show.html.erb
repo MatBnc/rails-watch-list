@@ -1,21 +1,27 @@
-<div style="text-align: center;" class="my-5">
-  <h1>Your list: <%= @list.name %></h1>
+<div class="banner p-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2079&q=80);">
+  <h1><%= @list.name %></h1>
 </div>
 
-<% @bookmarks.each do |bookmark| %>
-  <div class="card-product" style="position: relative">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2><%= bookmark.movie.title %></h2>
-      <p><%= bookmark.comment %></p>
-      <%= link_to del_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-      <i class="fa fa-trash" aria-hidden="true" style='position: absolute; bottom: 5px; right: 5px; color:black;'></i>
-      <% end %>
-    </div>
+<div class="container">
+  <div class="row">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="col-6">
+        <div class="card-product" style="position: relative">
+          <img src= <%= bookmark.movie.poster_url %> />
+          <div class="card-product-infos">
+            <h2><%= bookmark.movie.title %></h2>
+            <p><%= bookmark.comment %></p>
+            <%= link_to del_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa fa-trash" aria-hidden="true" style='position: absolute; bottom: 5px; right: 5px; color:black;'></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
 
-<div class="link">
-  <h3><%= link_to "New bookmark", new_list_bookmarks_path(@list) %></h3>
-  <h3><%= link_to "Back to index", lists_path %></h3>
+  <div class="my-links">
+    <%= link_to "New bookmark", new_list_bookmarks_path(@list) %>
+    <%= link_to "Back to index", lists_path %>
+  </div>
 </div>

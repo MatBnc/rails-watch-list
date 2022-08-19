@@ -1,7 +1,11 @@
-<h1>Create a new list</h1>
+<div class="container mt-5">
 
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.association :movies %>
-  <%= f.button :submit %>
-<% end %>
+  <h1>Create a new list</h1>
+
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name %>
+    <%= f.association :movies %>
+    <%= f.button :submit %>
+  <% end %>
+
+</div>
