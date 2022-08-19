@@ -11,6 +11,44 @@
   </head>
 
   <body>
-    <%= yield %>
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+        <img src="https://www.koolbadges.co.uk/images/thumbnails/oldschoolmoviecamera-200x200.jpg" />
+          </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/lists">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+              </div>
+            </li>
+            <!--li class="nav-item"-->
+            <!--/li-->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="banner p-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2079&q=80);">
+      <h1>Create your <strong>must watch</strong> movie lists !</h1>
+      <p>Add, comment and share your cinephile taste</p>
+    </div>
+      <div class="container">
+         <%= yield %>
+
+      </div>
+
+
   </body>
 </html>
